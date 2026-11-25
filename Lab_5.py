@@ -22,13 +22,20 @@ class Country:
     def __del__(self):
         print(f"[Destructor] Country {self._name} removed")
 
-    def get_name(self): return self._name
-    def get_capital(self): return self._capital
-    def get_code(self): return self._code
-    def get_population(self): return self._population
-    def get_area(self): return self._area
-    def get_gdp(self): return self._gdp
-    def get_government(self): return self._government
+    def get_name(self): 
+        return self._name
+    def get_capital(self): 
+        return self._capital
+    def get_code(self): 
+        return self._code
+    def get_population(self): 
+        return self._population
+    def get_area(self): 
+        return self._area
+    def get_gdp(self): 
+        return self._gdp
+    def get_government(self): 
+        return self._government
 
     def set_capital(self, value):
         self._capital = value
@@ -65,8 +72,10 @@ class Land:
     def __del__(self):
         print(f"[Destructor] Land {self._name} removed")
 
-    def get_name(self): return self._name
-    def get_countries(self): return list(self._countries)
+    def get_name(self): 
+        return self._name
+    def get_countries(self): 
+        return list(self._countries)
 
     def add_country(self, country):
         if country not in self._countries:
@@ -162,19 +171,9 @@ def main():
     print("Films by release date (oldest first)")
     for film in sort_films_by_date(films):
         film.print_info()
+if __name__ == "__main__":
+    main()
 
-lnd_1 = Land("fff" )
-cnt_1 = Country("fff", "frfr", "FF", 50_000_000, 1000, 100, GovernmentType.THEOCRACY)
-cnt_2 = Country("fdf", "frfr", "FFL", 70_000_000, 2000, 200, GovernmentType.AUTOCRACY)
-cnt_3 = Country("fnf", "frfr", "FFH", 60_000_000, 3000, 300, GovernmentType.DEMOCRACY)
-lnd_1.add_country(cnt_1)
-lnd_1.add_country(cnt_2)
-lnd_1.add_country(cnt_3)
-lnd_1.print_info()
-for country in lnd_1.get_countries():
-    print(f" name = {country.get_name()} , population = {country.get_population()}")
-    
-print(f" name = {lnd_1.get_name()} , population = {lnd_1.get_total_population()}")
 
 
 
